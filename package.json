@@ -8,9 +8,12 @@
   "private": true,
   "scripts": {
     "build": "microbundle --output dist --compress false && microbundle --output dist/compressed --compress false",
-    "dev": "microbundle watch --output dist --compress false"
+    "dev": "microbundle watch --output dist --compress false",
+    "docs": "jsdoc index.js -t node_modules/minami --readme README.md --destination docs"
   },
   "devDependencies": {
-    "microbundle": "^0.2.4"
+    "jsdoc": "^3.5.5",
+    "microbundle": "^0.2.4",
+    "minami": "^1.2.3"
   }
 }
