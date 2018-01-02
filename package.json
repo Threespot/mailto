@@ -1,0 +1,16 @@
+{
+  "name": "mailto",
+  "version": "1.0.0",
+  "description": "replaces obscured elememt with a mailto link",
+  "main": "index.js",
+  "author": "Mat Brady <matbr8dy@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "microbundle",
+    "dev": "microbundle watch"
+  },
+  "devDependencies": {
+    "microbundle": "^0.2.4"
+  }
+}
