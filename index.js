@@ -3,16 +3,10 @@
 const obscureString = "[at]";
 
 /**
- * MailTo Link
- * replaces obscured element with a mailto link
+ * Replaces obscured element with a mailto link <br>
  * Looks for all elements with a "data-email" attribute and converts them to
  * mailto links, using the value of that attribute as the email address.
  * Inner HTML is preserved and any occurrences of "[at]" are converted to "@".
- * Exmaple: <span data-email="hello[at]threespot.com">Contact Us</span>
- * Becomes: <a href="mailto:hello@threespot.com">Contact Us</a>
- * Works with inner HTML
- * Exmaple: <span data-email="hello[at]threespot.com"><b>hello[at]threespot.com</b></span>
- * Becomes: <a href="mailto:hello@threespot.com"><b>hello@threespot.com</b></a>
  */
 class MailToLink {
   /**
