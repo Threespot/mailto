@@ -7,8 +7,8 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "build": "microbundle",
-    "dev": "microbundle watch"
+    "build": "microbundle --output dist --compress false && microbundle --output dist/compressed --compress false",
+    "dev": "microbundle watch --output dist --compress false"
   },
   "devDependencies": {
     "microbundle": "^0.2.4"
