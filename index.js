@@ -15,6 +15,10 @@ const obscureString = "[at]";
  * Becomes: <a href="mailto:hello@threespot.com"><b>hello@threespot.com</b></a>
  */
 class MailToLink {
+  /**
+   * Create link from obscured element
+   * @param {object} el - dom node
+   */
   constructor(el) {
     this.el = el;
     let link;
