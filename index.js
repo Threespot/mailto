@@ -48,7 +48,7 @@ class MailToLink {
    * @param {string} href - value to apply to link
    * @param {string} body - body to insert to link
    * @param {string} classNames - values to add to the link
-   * @param {object} link - DOM element
+   * @returns {object} link - DOM element
    */
   createLinkReplacement(href, body, classNames = "") {
     let link = document.createElement("a");
