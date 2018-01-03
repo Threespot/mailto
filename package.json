@@ -7,6 +7,20 @@
   "contributors": [
     "Mat Brady <matbr8dy@gmail.com>"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/fixme"
+  },
+  "keywords": [
+    "mailto"
+  ],
+  "bugs": {
+    "url": "https://github.com/USER/REPO/issues"
+  },
+  "engines": {
+    "node": ">=6.0.0",
+    "npm": ">=3.0.0"
+  },
   "license": "MIT",
   "private": true,
   "scripts": {
