@@ -1,6 +1,6 @@
 # MailTo
 
-[![Build Status](https://travis-ci.org/matbrady/mailto.svg?branch=master)](https://travis-ci.org/matbrady/mailto)
+[![Build Status](https://travis-ci.org/Threespot/mailto.svg?branch=master)](https://travis-ci.org/Threespot/mailto)
 
 Replaces obscured element with a mailto link
 

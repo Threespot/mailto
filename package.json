@@ -4,18 +4,14 @@
   "description": "replaces obscured elememt with a mailto link",
   "main": "index.js",
   "author": "Ted Whitehead <hello@tedwhitehead.com>",
-  "contributors": [
-    "Mat Brady <matbr8dy@gmail.com>"
-  ],
+  "contributors": ["Mat Brady <matbr8dy@gmail.com>"],
   "repository": {
     "type": "git",
-    "url": "git://github.com/fixme"
+    "url": "git://github.com/Threespot/mailto"
   },
-  "keywords": [
-    "mailto"
-  ],
+  "keywords": ["mailto"],
   "bugs": {
-    "url": "https://github.com/USER/REPO/issues"
+    "url": "https://github.com/Threespot/mailto/issues"
   },
   "engines": {
     "node": ">=6.0.0",
@@ -24,9 +20,11 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "build": "microbundle --output dist --compress false && microbundle --output dist/compressed --compress false",
+    "build":
+      "microbundle --output dist --compress false && microbundle --output dist/compressed --compress false",
     "dev": "microbundle watch --output dist --compress false",
-    "docs": "jsdoc index.js -t node_modules/minami --readme README.md --destination docs",
+    "docs":
+      "jsdoc index.js -t node_modules/minami --readme README.md --destination docs",
     "test": "jest"
   },
   "devDependencies": {
