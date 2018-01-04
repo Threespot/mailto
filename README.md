@@ -53,5 +53,3 @@ const linkElem = document.getElementById("mailtoLink");
 
 new MailToLink(linkElem);
 ```
-new MailToLink(linkElem);
-```
