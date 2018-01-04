@@ -35,3 +35,23 @@ Works with inner HTML
   <b>hello@threespot.com</b>
 </a>
 ```
+
+## Usage
+
+**html**
+
+```html
+<span id="mailtoLink" data-email="hello[at]threespot.com">Contact Us</span>
+```
+
+**js**
+
+```js
+import MailToLink from "mailto";
+
+const linkElem = document.getElementById("mailtoLink");
+
+new MailToLink(linkElem);
+```
+new MailToLink(linkElem);
+```
