@@ -53,7 +53,9 @@ class MailToLink {
   createLinkReplacement(href, body, classNames = "") {
     let link = document.createElement("a");
     link.setAttribute("href", href);
-    link.setAttribute("class", classNames);
+    if (classNames.length) {
+      link.setAttribute("class", classNames);
+    }
     link.innerHTML = body;
     return link;
   }
