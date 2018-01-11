@@ -27,7 +27,7 @@
       "jsdoc index.js -t node_modules/minami --readme README.md --destination docs",
     "test":
       "jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
-    "test-local": "jest"
+    "test-local": "jest --coverage"
   },
   "pre-commit": ["test-local"],
   "devDependencies": {
