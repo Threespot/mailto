@@ -1,5 +1,5 @@
 {
-  "name": "mailto",
+  "name": "@threespot/mailto",
   "version": "1.0.0",
   "description": "replaces obscured elememt with a mailto link",
   "main": "index.js",
