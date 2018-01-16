@@ -6,7 +6,7 @@ Replaces obscured element with a mailto link
 
 ## Install
 
-```
+```bash
 npm install @threespot/mailto
 ```
 
