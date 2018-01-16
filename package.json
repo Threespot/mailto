@@ -22,7 +22,7 @@
     "npm": ">=3.0.0"
   },
   "license": "MIT",
-  "private": true,
+  "private": false,
   "scripts": {
     "build": "microbundle --output dist --compress false && microbundle --output dist/compressed --compress false",
     "dev": "microbundle watch --output dist --compress false",
