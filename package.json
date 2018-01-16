@@ -4,12 +4,16 @@
   "description": "replaces obscured elememt with a mailto link",
   "main": "index.js",
   "author": "Ted Whitehead <hello@tedwhitehead.com>",
-  "contributors": ["Mat Brady <matbr8dy@gmail.com>"],
+  "contributors": [
+    "Mat Brady <matbr8dy@gmail.com>"
+  ],
   "repository": {
     "type": "git",
     "url": "git://github.com/Threespot/mailto"
   },
-  "keywords": ["mailto"],
+  "keywords": [
+    "mailto"
+  ],
   "bugs": {
     "url": "https://github.com/Threespot/mailto/issues"
   },
@@ -26,7 +30,9 @@
     "test": "jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "test-local": "jest --coverage"
   },
-  "pre-commit": ["test-local"],
+  "pre-commit": [
+    "test-local"
+  ],
   "devDependencies": {
     "coveralls": "^3.0.0",
     "jest": "^22.0.4",
