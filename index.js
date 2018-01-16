@@ -78,11 +78,4 @@ class MailToLink {
   }
 }
 
-// Get any existing elements that should be unobscured
-const nodes = document.querySelectorAll("[data-email]");
-for (var i = 0; i < nodes.length; i++) {
-  // create a new link from each element
-  new MailToLink(nodes[i]);
-}
-
 export default MailToLink;
