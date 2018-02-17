@@ -1,14 +1,4 @@
-(function webpackUniversalModuleDefinition(root, factory) {
-	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory();
-	else if(typeof define === 'function' && define.amd)
-		define([], factory);
-	else if(typeof exports === 'object')
-		exports["mailtoLink"] = factory();
-	else
-		root["mailtoLink"] = factory();
-})(typeof self !== 'undefined' ? self : this, function() {
-return /******/ (function(modules) { // webpackBootstrap
+define("mailtoLink", [], function() { return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
 /******/
@@ -188,6 +178,5 @@ var MailToLink = function () {
 exports.default = MailToLink;
 
 /***/ })
-/******/ ]);
-});
-//# sourceMappingURL=mailto.umd.js.map
+/******/ ])});;
+//# sourceMappingURL=mailto.amd.js.map

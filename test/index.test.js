@@ -1,4 +1,4 @@
-const MailToLink = require("../dist/mailto.js");
+const MailToLink = require("../index");
 
 const validObscuredEmail = "hello[at]threespot.com";
 const validEmail = "hello@threespot.com";
@@ -9,6 +9,15 @@ test('replaces "[at]" with "@"', () => {
   expect(MailToLink.prototype.replaceObscuredString(validObscuredEmail)).toBe(
     validEmail
   );
+  expect(typeof MailToLink.prototype.replaceObscuredString).toBe('function');
+  // Non string param
+  expect(() => {
+    MailToLink.prototype.replaceObscuredString(false);
+  }).toThrowError();
+  // Empty param
+  expect(() => {
+    MailToLink.prototype.replaceObscuredString();
+  }).toThrowError();
 });
 
 test("create mailto link node", () => {
@@ -21,20 +30,21 @@ test("create mailto link node", () => {
     linkHtml,
     classNames
   );
+  expect(typeof MailToLink.prototype.createLinkReplacement).toBe('function');
   expect(link.tagName).toEqual("A");
   expect(link.getAttribute("href")).toEqual(href);
   expect(link.getAttribute("class")).toEqual(classNames);
   expect(link.innerHTML).toEqual(validInnerHTMLEmail);
 });
 
-test("replace element with mailto link", () => {
+test("replace span with mailto link", () => {
   const href = `mailto:${validEmail}`;
   const linkHtml = validInnerHTMLEmail;
   const classNames = "TestLink";
 
   // Create parent element
   const parent = document.createElement("div");
-  // create init email element
+  // create init email element, span and anchor
   let elem = document.createElement("span");
   // set element body
   elem.innerHTML = linkHtml;
@@ -45,9 +55,38 @@ test("replace element with mailto link", () => {
   parent.appendChild(elem);
 
   const link = new MailToLink(elem).el;
-
   expect(link.tagName).toEqual("A");
   expect(link.getAttribute("href")).toEqual(href);
   expect(link.getAttribute("class")).toEqual(classNames);
   expect(link.innerHTML).toEqual(validInnerHTMLEmail);
 });
+
+test("update anchor with mailto value", () => {
+  const href = `mailto:${validEmail}`;
+  const linkHtml = validInnerHTMLEmail;
+  const classNames = "TestLink";
+
+  // Create parent element
+  const parent = document.createElement("div");
+  // create init email element, span and anchor
+  let elem = document.createElement("a");
+  // set element body
+  elem.innerHTML = linkHtml;
+  // update elment attributes
+  elem.setAttribute("data-email", validObscuredEmail);
+  elem.setAttribute("class", classNames);
+  // Add child to parent
+  parent.appendChild(elem);
+
+  const link = new MailToLink(elem).el;
+  expect(link.tagName).toEqual("A");
+  expect(link.getAttribute("href")).toEqual(href);
+  expect(link.getAttribute("class")).toEqual(classNames);
+  expect(link.innerHTML).toEqual(validInnerHTMLEmail);
+});
+
+test("exit early", () => {
+  expect(() => {
+    new MailToLink()
+  }).toThrowError()
+})

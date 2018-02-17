@@ -4,8 +4,8 @@ const obscureString = "[at]";
 
 /**
  * Replaces obscured element with a mailto link <br>
- * Looks for all elements with a "data-email" attribute and converts them to
- * mailto links, using the value of that attribute as the email address.
+ * Uses an elements "data-email" attribute to convert them to mailto links, using
+ * the value of that attribute as the email address.
  * Inner HTML is preserved and any occurrences of "[at]" are converted to "@".
  */
 class MailToLink {
@@ -15,10 +15,15 @@ class MailToLink {
    */
   constructor(el) {
     this.el = el;
-    let link;
+    let link, dataAttr, href;
     // Generate mailto href
-    const dataAttr = el.getAttribute("data-email");
-    const href = `mailto:${this.replaceObscuredString(dataAttr)}`;
+    try {
+      dataAttr = el.getAttribute("data-email");
+      href = `mailto:${this.replaceObscuredString(dataAttr)}`;
+    } catch(e) {
+      throw Error('MailToLink: contructor require a DOM node object param')
+    }
+
 
     // Replace [at] with @ in link text
     let linkHtml = el.innerHTML;

@@ -24,21 +24,35 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "build": "microbundle --output dist --compress false && microbundle --output dist/compressed --compress false",
-    "dev": "microbundle watch --output dist --compress false",
+    "webpack": "webpack --config webpack.config.js",
     "docs": "jsdoc index.js -t node_modules/minami --readme README.md --destination docs",
     "test": "jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
-    "test-local": "jest --coverage"
+    "test-local": "jest --coverage --no-cache"
   },
   "pre-commit": [
     "test-local"
   ],
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ],
+    "moduleDirectories": [
+      "node_modules"
+    ]
+  },
   "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-preset-env": "^1.6.1",
     "coveralls": "^3.0.0",
     "jest": "^22.0.4",
     "jsdoc": "^3.5.5",
-    "microbundle": "^0.2.4",
     "minami": "^1.2.3",
-    "pre-commit": "^1.2.2"
+    "pre-commit": "^1.2.2",
+    "uglifyjs-webpack-plugin": "^1.2.0",
+    "webpack": "^3.10.0",
+    "webpack-merge": "^4.1.1"
   }
 }
