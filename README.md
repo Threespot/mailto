@@ -1,6 +1,6 @@
 # MailTo
 
-[![Build Status](https://travis-ci.org/Threespot/mailto.svg?branch=master)](https://travis-ci.org/Threespot/mailto) [![Coverage Status](https://coveralls.io/repos/github/Threespot/mailto/badge.svg?branch=master)](https://coveralls.io/github/Threespot/mailto?branch=master)
+[![Build Status](https://travis-ci.org/Threespot/mailto.svg?branch=master)](https://travis-ci.org/Threespot/mailto) [![Coverage Status](https://coveralls.io/repos/github/Threespot/mailto/badge.svg)](https://coveralls.io/github/Threespot/mailto)
 
 Replaces obscured element with a mailto link
 
