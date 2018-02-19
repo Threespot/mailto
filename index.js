@@ -27,7 +27,7 @@ class MailToLink {
 
     // Replace [at] with @ in link text
     let linkHtml = el.innerHTML;
-    if (linkHtml.indexOf(obscureString)) {
+    if (linkHtml.indexOf(obscureString) > 0) {
       linkHtml = this.replaceObscuredString(linkHtml);
       el.innerHTML = linkHtml;
     }
@@ -37,7 +37,7 @@ class MailToLink {
       el.setAttribute("href", href);
     } else {
       // Create link tag, remove original element
-      const classNames = el.getAttribute("class") || "";
+      const classNames = el.getAttribute("class");
       link = this.createLinkReplacement(href, linkHtml, classNames);
       // Insert link and remove original element
       el.insertAdjacentHTML("beforebegin", link.outerHTML);

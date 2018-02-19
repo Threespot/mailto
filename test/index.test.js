@@ -35,11 +35,16 @@ test("create mailto link node", () => {
   expect(link.getAttribute("href")).toEqual(href);
   expect(link.getAttribute("class")).toEqual(classNames);
   expect(link.innerHTML).toEqual(validInnerHTMLEmail);
+
+  const link2 = MailToLink.prototype.createLinkReplacement(
+    href, linkHtml
+  );
+  expect(link2.getAttribute("class")).toEqual(null);
 });
 
 test("replace span with mailto link", () => {
   const href = `mailto:${validEmail}`;
-  const linkHtml = validInnerHTMLEmail;
+  const linkHtml = validInnerHTMLObscuredEmail;
   const classNames = "TestLink";
 
   // Create parent element
@@ -47,7 +52,7 @@ test("replace span with mailto link", () => {
   // create init email element, span and anchor
   let elem = document.createElement("span");
   // set element body
-  elem.innerHTML = linkHtml;
+  elem.innerHTML = "string without obscured character";
   // update elment attributes
   elem.setAttribute("data-email", validObscuredEmail);
   elem.setAttribute("class", classNames);
@@ -58,12 +63,12 @@ test("replace span with mailto link", () => {
   expect(link.tagName).toEqual("A");
   expect(link.getAttribute("href")).toEqual(href);
   expect(link.getAttribute("class")).toEqual(classNames);
-  expect(link.innerHTML).toEqual(validInnerHTMLEmail);
+  expect(link.innerHTML).toEqual("string without obscured character");
 });
 
 test("update anchor with mailto value", () => {
   const href = `mailto:${validEmail}`;
-  const linkHtml = validInnerHTMLEmail;
+  const linkHtml = validInnerHTMLObscuredEmail;
   const classNames = "TestLink";
 
   // Create parent element
