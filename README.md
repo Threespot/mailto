@@ -53,7 +53,7 @@ Works with inner HTML
 **js**
 
 ```js
-import MailToLink from "mailto";
+import MailToLink from "@threespot/mailto";
 
 const linkElem = document.getElementById("mailtoLink");
 
