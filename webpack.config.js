@@ -5,6 +5,9 @@ const webpack = require('webpack');
 
 
 const defaultConfig = {
+
+  mode: "production",
+  
   entry: {
     "mailto": "./index"
   }, // string | object | array
