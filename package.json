@@ -30,9 +30,11 @@
     "test": "jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "test:local": "jest --coverage --no-cache"
   },
-  "pre-commit": [
-    "test:local"
-  ],
+  "husky": {
+    "hooks": {
+      "pre-push": "yarn run test:local"
+    }
+  },
   "jest": {
     "moduleFileExtensions": [
       "js",
@@ -48,13 +50,14 @@
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-preset-env": "^1.6.1",
     "coveralls": "^3.0.0",
+    "husky": "^0.15.0-rc.8",
     "jest": "^22.0.4",
     "jsdoc": "^3.5.5",
     "minami": "^1.2.3",
-    "pre-commit": "^1.2.2",
     "uglifyjs-webpack-plugin": "^1.2.0",
     "webpack": "^4.0.0",
     "webpack-cli": "^2.0.10",
     "webpack-merge": "^4.1.1"
-  }
+  },
+  "dependencies": {}
 }
