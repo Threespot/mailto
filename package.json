@@ -1,7 +1,7 @@
 {
   "name": "@threespot/mailto",
   "version": "1.0.0",
-  "description": "replaces obscured elememt with a mailto link",
+  "description": "replaces obscured element with a mailto link",
   "main": "index.js",
   "homepage": "https://threespot.github.io/mailto/index.html",
   "author": "Ted Whitehead <hello@tedwhitehead.com>",

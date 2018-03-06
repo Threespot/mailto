@@ -21,7 +21,7 @@ class MailToLink {
       dataAttr = el.getAttribute("data-email");
       href = `mailto:${this.replaceObscuredString(dataAttr)}`;
     } catch(e) {
-      throw Error('MailToLink: contructor require a DOM node object param')
+      throw Error('MailToLink: constructor requires a DOM node object')
     }
 
 
