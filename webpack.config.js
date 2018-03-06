@@ -6,8 +6,8 @@ const webpack = require('webpack');
 
 const defaultConfig = {
 
-  mode: "production",
-  
+  mode: "development",
+
   entry: {
     "mailto": "./index"
   }, // string | object | array
@@ -50,6 +50,7 @@ const defaultConfig = {
 const mainConfig = {};
 
 const minConfig = {
+  mode: "production",
   output: {
     path: path.resolve(__dirname, "dist/compressed"), // string
   },
