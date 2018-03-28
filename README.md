@@ -1,5 +1,6 @@
 # MailTo
 
+[![npm](https://badge.fury.io/js/%40threespot%2Fmailto.svg)](https://www.npmjs.com/package/@threespot/mailto)
 [![Build Status](https://travis-ci.org/Threespot/mailto.svg?branch=master)](https://travis-ci.org/Threespot/mailto) [![Coverage Status](https://coveralls.io/repos/github/Threespot/mailto/badge.svg)](https://coveralls.io/github/Threespot/mailto)
 
 Replaces obscured element with a mailto link
