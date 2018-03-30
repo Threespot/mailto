@@ -7,7 +7,7 @@
 		exports["mailtoLink"] = factory();
 	else
 		root["mailtoLink"] = factory();
-})(typeof self !== 'undefined' ? self : this, function() {
+})(window, function() {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -54,6 +54,11 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 		}
 /******/ 	};
 /******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
 /******/ 	// getDefaultExport function for compatibility with non-harmony modules
 /******/ 	__webpack_require__.n = function(module) {
 /******/ 		var getter = module && module.__esModule ?
@@ -69,125 +74,25 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// __webpack_public_path__
 /******/ 	__webpack_require__.p = "";
 /******/
+/******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = "./index.js");
 /******/ })
 /************************************************************************/
-/******/ ([
-/* 0 */
+/******/ ({
+
+/***/ "./index.js":
+/*!******************!*\
+  !*** ./index.js ***!
+  \******************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var obscureString = "[at]";
-
-/**
- * Replaces obscured element with a mailto link <br>
- * Looks for all elements with a "data-email" attribute and converts them to
- * mailto links, using the value of that attribute as the email address.
- * Inner HTML is preserved and any occurrences of "[at]" are converted to "@".
- */
-
-var MailToLink = function () {
-  /**
-   * Create link from obscured element
-   * @param {object} el - dom node
-   */
-  function MailToLink(el) {
-    _classCallCheck(this, MailToLink);
-
-    this.el = el;
-    var link = void 0,
-        dataAttr = void 0,
-        href = void 0;
-    // Generate mailto href
-    try {
-      dataAttr = el.getAttribute("data-email");
-      href = "mailto:" + this.replaceObscuredString(dataAttr);
-    } catch (e) {
-      throw Error('MailToLink: contructor require a DOM node object param');
-    }
-
-    // Replace [at] with @ in link text
-    var linkHtml = el.innerHTML;
-    if (linkHtml.indexOf(obscureString)) {
-      linkHtml = this.replaceObscuredString(linkHtml);
-      el.innerHTML = linkHtml;
-    }
-
-    // Add mailto href to link tags
-    if (el.nodeName === "A") {
-      el.setAttribute("href", href);
-    } else {
-      // Create link tag, remove original element
-      var classNames = el.getAttribute("class") || "";
-      link = this.createLinkReplacement(href, linkHtml, classNames);
-      // Insert link and remove original element
-      el.insertAdjacentHTML("beforebegin", link.outerHTML);
-      el.parentNode.removeChild(el);
-
-      // replace instance el with new element
-      this.el = link;
-    }
-  }
-
-  /**
-   * Create link to replace the original element
-   * @param {string} href - value to apply to link
-   * @param {string} body - body to insert to link
-   * @param {string} classNames - values to add to the link
-   * @returns {object} link - DOM element
-   */
-
-
-  _createClass(MailToLink, [{
-    key: "createLinkReplacement",
-    value: function createLinkReplacement(href, body) {
-      var classNames = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : "";
-
-      var link = document.createElement("a");
-      link.setAttribute("href", href);
-      if (classNames.length) {
-        link.setAttribute("class", classNames);
-      }
-      link.innerHTML = body;
-      return link;
-    }
-
-    /**
-     * Replace obscured string with valid email address
-     * @param {string} str - obscured email string
-     * @return {string} newStr - valid email string
-     */
-
-  }, {
-    key: "replaceObscuredString",
-    value: function replaceObscuredString(str) {
-      var newStr = void 0;
-      try {
-        newStr = str.replace(obscureString, "@");
-      } catch (e) {
-        throw Error("MailToLink: `data-email` attribute for mailto replacement. Link not created");
-      }
-      return newStr;
-    }
-  }]);
-
-  return MailToLink;
-}();
-
-exports.default = MailToLink;
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nvar obscureString = \"[at]\";\n\n/**\n * Replaces obscured element with a mailto link <br>\n * Uses an elements \"data-email\" attribute to convert them to mailto links, using\n * the value of that attribute as the email address.\n * Inner HTML is preserved and any occurrences of \"[at]\" are converted to \"@\".\n */\n\nvar MailToLink = function () {\n  /**\n   * Create link from obscured element\n   * @param {object} el - dom node\n   */\n  function MailToLink(el) {\n    _classCallCheck(this, MailToLink);\n\n    this.el = el;\n    var link = void 0,\n        dataAttr = void 0,\n        href = void 0;\n    // Generate mailto href\n    try {\n      dataAttr = el.getAttribute(\"data-email\");\n      href = \"mailto:\" + this.replaceObscuredString(dataAttr);\n    } catch (e) {\n      throw Error('MailToLink: constructor requires a DOM node object');\n    }\n\n    // Replace [at] with @ in link text\n    var linkHtml = el.innerHTML;\n    if (linkHtml.indexOf(obscureString) > 0) {\n      linkHtml = this.replaceObscuredString(linkHtml);\n      el.innerHTML = linkHtml;\n    }\n\n    // Add mailto href to link tags\n    if (el.nodeName === \"A\") {\n      el.setAttribute(\"href\", href);\n    } else {\n      // Create link tag, remove original element\n      var classNames = el.getAttribute(\"class\");\n      link = this.createLinkReplacement(href, linkHtml, classNames);\n      // Insert link and remove original element\n      el.insertAdjacentHTML(\"beforebegin\", link.outerHTML);\n      el.parentNode.removeChild(el);\n\n      // replace instance el with new element\n      this.el = link;\n    }\n  }\n\n  /**\n   * Create link to replace the original element\n   * @param {string} href - value to apply to link\n   * @param {string} body - body to insert to link\n   * @param {string} classNames - values to add to the link\n   * @returns {object} link - DOM element\n   */\n\n\n  _createClass(MailToLink, [{\n    key: \"createLinkReplacement\",\n    value: function createLinkReplacement(href, body) {\n      var classNames = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : \"\";\n\n      var link = document.createElement(\"a\");\n      link.setAttribute(\"href\", href);\n      if (classNames.length) {\n        link.setAttribute(\"class\", classNames);\n      }\n      link.innerHTML = body;\n      return link;\n    }\n\n    /**\n     * Replace obscured string with valid email address\n     * @param {string} str - obscured email string\n     * @return {string} newStr - valid email string\n     */\n\n  }, {\n    key: \"replaceObscuredString\",\n    value: function replaceObscuredString(str) {\n      var newStr = void 0;\n      try {\n        newStr = str.replace(obscureString, \"@\");\n      } catch (e) {\n        throw Error(\"MailToLink: `data-email` attribute for mailto replacement. Link not created\");\n      }\n      return newStr;\n    }\n  }]);\n\n  return MailToLink;\n}();\n\nexports.default = MailToLink;\n\n//# sourceURL=webpack://%5Bname%5DLink/./index.js?");
 
 /***/ })
-/******/ ]);
+
+/******/ });
 });
 //# sourceMappingURL=mailto.umd.js.map

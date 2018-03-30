@@ -16,14 +16,14 @@ class MailToLink {
   constructor(el) {
     this.el = el;
     let link, dataAttr, href;
+
     // Generate mailto href
     try {
       dataAttr = el.getAttribute("data-email");
       href = `mailto:${this.replaceObscuredString(dataAttr)}`;
-    } catch(e) {
-      throw Error('MailToLink: constructor requires a DOM node object')
+    } catch (e) {
+      throw Error("MailToLink: constructor requires a DOM node object");
     }
-
 
     // Replace [at] with @ in link text
     let linkHtml = el.innerHTML;
