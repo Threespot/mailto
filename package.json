@@ -2,7 +2,7 @@
   "name": "@threespot/mailto",
   "version": "1.0.1",
   "description": "Mailto link obfuscation helper",
-  "main": "index.js",
+  "main": "dist/mailto.m.js",
   "homepage": "https://threespot.github.io/mailto/index.html",
   "author": "Threespot <hello@threespot.com>",
   "contributors": [
