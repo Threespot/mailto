@@ -1,6 +1,6 @@
 {
   "name": "@threespot/mailto",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Mailto link obfuscation helper",
   "main": "dist/mailto.m.js",
   "homepage": "https://threespot.github.io/mailto/index.html",
